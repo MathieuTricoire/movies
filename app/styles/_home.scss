@@ -1,0 +1,25 @@
+.Home {
+    &-grid {
+        max-height: 400px;
+        margin: 50px;
+    }
+}
+
+.HomeLink {
+    display: block;
+    text-align: center;
+    color: inherit;
+    text-decoration: initial;
+
+    &-icon {
+        $size: 100px;
+        width: $size;
+        height: $size;
+        color: inherit;
+    }
+
+    &-label {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+}

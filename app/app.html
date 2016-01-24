@@ -1,0 +1,75 @@
+<md-sidenav
+    md-is-locked-open="$mdMedia('gt-sm')"
+    md-component-id="menu"
+    layout="column"
+    md-swipe-left="app.closeMenu()"
+    class="Sidenav md-whiteframe-z2">
+
+    <header class="SidenavHeader">
+        <a ui-sref="app.home" class="SidenavHeader-link">
+            <img src="assets/img/logo.svg" alt="Movies !" class="SidenavHeader-logo">
+            <h1 class="SidenavHeader-title">Movies !</h1>
+        </a>
+    </header>
+
+    <md-content flex layout="column">
+        <ul flex layout="column" class="SidenavMenu">
+            <li ng-repeat="item in ::app.menuItems">
+                <a ng-href="{{::item.href}}"
+                    layout="row"
+                    class="SidenavMenu-link"
+                    ng-class="{ 'is-active': (item.state|includedByState) }">
+                    <md-icon md-svg-src="assets/img/icons/{{ ::item.icon }}.svg" class="SidenavMenu-icon"></md-icon>{{ ::item.label }}
+                </a>
+            </li>
+        </ul>
+
+        <ul layout="column" class="SidenavMenu">
+            <li ng-repeat="item in ::app.bottomItems">
+                <a ng-href="{{::item.href}}"
+                    layout="row"
+                    class="SidenavMenu-link"
+                    ng-class="{ 'is-active': (item.state|includedByState) }">
+                    <md-icon md-svg-src="assets/img/icons/{{ ::item.icon }}.svg" class="SidenavMenu-icon"></md-icon>{{ ::item.label }}
+                </a>
+            </li>
+        </ul>
+    </md-content>
+</md-sidenav>
+
+
+<md-content flex layout="column">
+    <md-progress-linear md-mode="query" class="Loading-indicator" ng-show="app.isLoading()"></md-progress-linear>
+
+    <md-toolbar layout="row" class="Toolbar" layout="row" layout-align="start center">
+        <md-button
+            hide-gt-sm
+            ng-hide="app.back"
+            ng-click="app.toggleMenu()"
+            class="md-icon-button"
+            aria-label="Menu">
+            <md-icon md-svg-src="assets/img/icons/menu.svg"></md-icon>
+        </md-button>
+
+        <md-button
+            ng-show="app.back"
+            ng-click="app.goBack()"
+            class="md-icon-button"
+            aria-label="Back">
+            <md-icon md-svg-src="assets/img/icons/chevron-left.svg"></md-icon>
+        </md-button>
+
+        <div flex ng-bind="app.toolbarTitle" class="Toolbar-title"></div>
+
+        <md-button
+            ng-repeat="action in app.toolbarActions"
+            ng-disabled="action.disabled"
+            ng-click="action.callback()"
+            class="md-icon-button"
+            aria-label="{{ action.label }}">
+            <md-icon md-svg-src="assets/img/icons/{{ action.iconName }}.svg"></md-icon>
+        </md-button>
+    </md-toolbar>
+
+    <md-content ui-view flex layout="column" md-scroll-y></md-content>
+</md-content>

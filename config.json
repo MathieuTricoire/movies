@@ -1,0 +1,4 @@
+{
+    "apiUrl": "http://api.rottentomatoes.com/api/public/v1.0/",
+    "apiKey": "YOUR_API_KEY"
+}

@@ -1,0 +1,41 @@
+<section flex="none">
+    <md-subheader class="md-primary">Informations</md-subheader>
+    <md-list layout-padding>
+        <md-list-item>
+            <p>Year : {{ ::detail.movie.year }}</p>
+        </md-list-item>
+        <md-list-item>
+            <p>Runtime : {{ ::detail.movie.runtime }} min</p>
+        </md-list-item>
+        <md-list-item>
+            <p>Rating : {{ ::detail.movie.mpaa_rating }}</p>
+        </md-list-item>
+        <md-list-item>
+            <p>Genres : {{ ::detail.movie.genres.join(', ') }}</p>
+        </md-list-item>
+        <md-list-item>
+            <p>Synopsis : {{ ::detail.movie.synopsis }}</p>
+        </md-list-item>
+    </md-list>
+</section>
+
+<section flex="none">
+    <md-subheader class="md-primary">Rating</md-subheader>
+    <md-list layout-padding>
+        <md-list-item>
+            <p>Critics : {{ ::detail.movie.ratings.critics_score|movieScore }} {{ ::detail.movie.ratings.critics_rating }}</p>
+        </md-list-item>
+        <md-list-item>
+            <p>Audience : {{ ::detail.movie.ratings.audience_score|movieScore }} {{ ::detail.movie.ratings.audience_rating }}</p>
+        </md-list-item>
+    </md-list>
+</section>
+
+<section flex="none">
+    <md-subheader class="md-primary">Cast</md-subheader>
+    <md-list layout-padding>
+        <md-list-item ng-repeat="actor in ::detail.movie.abridged_cast">
+            <p>{{ ::actor.name }}</p>
+        </md-list-item>
+    </md-list>
+</section>

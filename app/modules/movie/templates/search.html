@@ -1,0 +1,16 @@
+<md-content flex="none" md-theme="light">
+    <md-input-container md-no-float class="MovieSearch-fieldContainer">
+        <md-icon md-svg-src="assets/img/icons/search.svg" class="MovieSearch-icon"></md-icon>
+        <input
+            type="text"
+            ng-model="search.query"
+            ng-model-options="{ debounce: { default: 500, blur: 0 } }"
+            ng-change="updateMovies()"
+            placeholder="Query"
+            class="MovieSearch-field" />
+    </md-input-container>
+</md-content>
+
+<md-content flex layout="column" retain-scroll>
+    <movie-row ng-repeat="movie in search.movies" movie="movie"></movie-row>
+</md-content>

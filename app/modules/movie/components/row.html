@@ -1,0 +1,20 @@
+<md-card ui-sref=".detail(::$ctrl.movie)" class="MovieRow-card">
+    <md-card-title>
+        <md-card-title-text layout="column" class="MovieRow-dataContainer">
+            <div class="MovieRow-title">
+                {{ ::$ctrl.movie.title }}
+                <span class="MovieRow-year">({{ ::$ctrl.movie.year }})</span>
+            </div>
+            <div class="MovieRow-infos md-subhead" layout="row" layout-align="space-between center">
+                <div>{{ ::$ctrl.movie.runtime }} min.</div>
+                <div>{{ ::$ctrl.movie.mpaa_rating }}</div>
+                <div>{{ ::$ctrl.movie.ratings.critics_score|movieScore }}</div>
+            </div>
+        </md-card-title-text>
+        <md-card-title-media>
+            <div class="MovieRow-posterContainer">
+                <img ng-src="{{ ::$ctrl.movie.posters.profile }}" alt="poster" class="MovieRow-poster" />
+            </div>
+        </md-card-title-media>
+    </md-card-title>
+</md-card>

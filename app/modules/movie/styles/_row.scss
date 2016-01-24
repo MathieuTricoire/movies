@@ -1,0 +1,39 @@
+.MovieRow {
+    flex: 0 0 auto;
+
+    &-card {
+        margin: 0;
+        box-shadow: none;
+        border-bottom: 1px solid #999;
+    }
+
+    &-dataContainer{
+        margin-right: 8px;
+    }
+
+    &-title {
+        font-size: 1.3rem;
+        font-weight: 400;
+    }
+
+    &-year {
+        font-size: 0.9rem;
+    }
+
+    &-infos.md-subhead {
+        margin-top: 4px;
+        font-size: 0.75rem;
+        font-style: italic;
+    }
+
+    &-posterContainer {
+        width: 75px;
+        height: 100px;
+    }
+
+    &-poster {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+    }
+}

@@ -1,0 +1,14 @@
+.Toolbar {
+    min-height: 56px;
+
+    &-title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 1.5rem;
+
+        @media (min-width: 960px) {
+            margin: 0 16px;
+        }
+    }
+}

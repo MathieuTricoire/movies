@@ -1,0 +1,31 @@
+.MovieSearch {
+    &-fieldContainer {
+        display: block;
+        margin: 8px 16px 8px 0;
+
+        &.md-has-icon {
+            padding: 2px 0 2px 48px;
+        }
+
+        .md-errors-spacer {
+            min-height: 0;
+            min-width: 0;
+        }
+    }
+
+    &-icon {
+        top: 8px;
+        left: 16px;
+    }
+
+    &-field {
+        font-size: 1.3rem;
+        line-height: 2rem;
+        height: 2rem;
+        text-shadow: inherit !important; // Fix material issue
+
+        &:focus {
+            color: $color-primary !important;
+        }
+    }
+}

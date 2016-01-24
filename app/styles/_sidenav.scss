@@ -1,0 +1,71 @@
+.Sidenav {
+    $width: 280px;
+    width: $width;
+    min-width: $width;
+    max-width: $width;
+}
+
+.SidenavHeader {
+    background-color: $color-primary;
+    color: $color-primary-contrast;
+    text-align: center;
+
+    &-link {
+        display: block;
+        padding: 16px;
+        color: inherit;
+        text-decoration: inherit;
+    }
+
+    &-logo {
+        width: 100%;
+        max-width: 200px;
+        max-height: 160px;
+        margin-bottom: 8px;
+
+        @media (max-height: 450px) {
+            display: none;
+        }
+    }
+
+    &-title {
+        margin: 0;
+        font-size: 2rem;
+        font-style: italic;
+        font-weight: normal;
+    }
+}
+
+.SidenavMenu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+
+    &-link {
+        text-transform: inherit;
+        font-size: 1.2rem;
+        text-align: left;
+        margin: 0;
+        padding: 8px 12px;
+        height: 52px;
+        line-height: 36px;
+        font-weight: inherit;
+        text-decoration: inherit;
+        color: inherit;
+
+        &.is-active {
+            background-color: #eee;
+            color: $color-primary;
+        }
+    }
+
+    &-icon {
+        $size: 36px;
+        display: inline-block;
+        margin: 0 8px 0 0;
+        width: $size;
+        height: $size;
+        color: inherit;
+    }
+}

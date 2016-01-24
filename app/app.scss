@@ -1,0 +1,28 @@
+$color-primary: #f44336;
+$color-primary-contrast: #fff;
+
+@import
+    "styles/main",
+    "styles/splashscreen",
+    "styles/sidenav",
+    "styles/toolbar",
+    "styles/home",
+    "styles/about",
+
+    "modules/movie/style";
+
+html, body {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+*:focus {
+    outline: 0;
+}
+
+#app {
+    width: 100%;
+    height: 100%;
+}
